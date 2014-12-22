@@ -29,9 +29,15 @@
                                 <!-- display hq images-->
                                 <?php if( have_rows('hq_images') ): ?>
                                     <?php while ( have_rows('hq_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('hq_image'); ?>">
-                                        <?php the_sub_field('hq_tech_description'); ?>
-                                        <?php the_sub_field('hq_background_info'); ?>
+                                        <article class="troop-entry">
+                                            <div class="image-container">
+                                                <img src="<?php the_sub_field('hq_image'); ?>">
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('hq_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('hq_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
                                 <?php else: ?>
                                     <div class="no-content-yet">

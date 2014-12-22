@@ -885,17 +885,6 @@ footer {
     .army-listing-boxes {
       padding: 5em 1em; } }
 
-.troop-entry {
-  padding-bottom: 2em; }
-  .troop-entry:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .troop-entry .troop-entry-title {
-    display: block;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 2em; }
-
 .box-listing {
   -webkit-animation: fadeIn 0.85s ease;
   animation: fadeIn 0.85s ease; }
@@ -919,7 +908,7 @@ footer {
       font-family: "Radley", serif; }
 
 .army-chart-symbol {
-  width: 80px; }
+  max-width: 70px; }
 
 .no-content-yet {
   min-height: 200px; }
@@ -927,6 +916,27 @@ footer {
     content: "";
     display: table;
     clear: both; }
+
+.troop-entry {
+  margin-bottom: 5em; }
+  .troop-entry:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .troop-entry .image-container {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 57.3509785009%; }
+    .troop-entry .image-container:last-child {
+      margin-right: 0; }
+  .troop-entry .stats-container {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 40.2913699012%; }
+    .troop-entry .stats-container:last-child {
+      margin-right: 0; }
 
 .accordion-tabs {
   list-style-type: none;

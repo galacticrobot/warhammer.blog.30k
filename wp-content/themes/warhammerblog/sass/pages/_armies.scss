@@ -17,20 +17,18 @@
     @include section;
     background-color: #F5f5f5;
 }
-.troop-entry {
-    @include clearfix;
-    padding-bottom: 2em;
-    .troop-entry-title {
-        display: block;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 2em;
-    }
-}
-
+// .troop-entry {
+//     @include clearfix;
+//     padding-bottom: 2em;
+//     .troop-entry-title {
+//         display: block;
+//         border-bottom: 1px solid #ddd;
+//         margin-bottom: 2em;
+//     }
+// }
 .box-listing {
     @include animation(fadeIn 0.85s ease);
 }
-
 .box {
     @include clearfix;
     background-color: white;
@@ -56,12 +54,21 @@
 //  Sidebar
 // --------------------------------------------------------------------------
 .army-chart-symbol {
-    width: 80px;
+    max-width: 70px;
 }
-
 .no-content-yet {
     @include clearfix;
     min-height: 200px;
+}
+.troop-entry {
+    margin-bottom: $vertical-padding;
+    @include clearfix;
+    .image-container {
+        @include span-columns(7);
+    }
+    .stats-container {
+        @include span-columns(5);
+    }
 }
 // --------------------------------------------------------------------------
 //  Tabs
@@ -77,86 +84,72 @@
     $tab-inactive-color: #ddd; //$base-background-color
     $tab-inactive-hover-color: darken($light-gray, 5);
     $tab-mode: $medium-screen;
-
     @include clearfix;
     margin-bottom: $base-spacing;
-
     @include media(max-width $tab-mode) {
         border: $tab-border;
         border-radius: $base-border-radius;
     }
-
-  .tab-header-and-content {
-    @include media($tab-mode) {
-      display: inline;
+    .tab-header-and-content {
+        @include media($tab-mode) {
+            display: inline;
+        }
+        &:first-child .tab-link {
+            border-top-left-radius: $base-border-radius;
+            border-top-right-radius: $base-border-radius;
+            @include media(max-width $tab-mode) {
+                border-top: 0;
+            }
+        }
+        &:last-child .tab-link {
+            @include media(max-width $tab-mode) {
+                border-bottom-left-radius: $base-border-radius;
+                border-bottom-right-radius: $base-border-radius;
+            }
+        }
     }
-
-    &:first-child .tab-link {
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-
-      @include media(max-width $tab-mode) {
-        border-top: 0;
-      }
+    .tab-link {
+        background-color: $tab-inactive-color;
+        border-top: $tab-border;
+        color: $dark-gray;
+        display: block;
+        font-weight: bold;
+        padding: $base-spacing/2 $gutter/2;
+        @include media($tab-mode) {
+            display: inline-block;
+            border-top-left-radius: $base-border-radius;
+            border-top-right-radius: $base-border-radius;
+            border-top: 0;
+        }
+        &:hover {
+            color: $base-link-color;
+        }
+        &:focus {
+            outline: none;
+        }
+        &.is-active {
+            background-color: $tab-active-background;
+            @include media($tab-mode) {
+                background-color: $tab-active-background;
+                border: $tab-border;
+                border-bottom-color: $tab-active-background;
+                margin-bottom: -1px;
+            }
+        }
     }
-
-    &:last-child .tab-link {
-      @include media(max-width $tab-mode) {
-        border-bottom-left-radius: $base-border-radius;
-        border-bottom-right-radius: $base-border-radius;
-      }
+    .tab-content {
+        @include animation(fadeIn 0.85s ease);
+        @include clearfix;
+        width: 100%;
+        background: $tab-content-background;
+        display: none;
+        padding: $base-spacing $gutter;
+        @include media($tab-mode) {
+            border-bottom-left-radius: $base-border-radius;
+            border-bottom-right-radius: $base-border-radius;
+            border-top-right-radius: $base-border-radius;
+            border: $tab-border;
+            float: left;
+        }
     }
-  }
-
-  .tab-link {
-    background-color: $tab-inactive-color;
-    border-top: $tab-border;
-    color: $dark-gray;
-    display: block;
-    font-weight: bold;
-    padding: $base-spacing/2 $gutter/2;
-
-    @include media($tab-mode) {
-      display: inline-block;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      border-top: 0;
-    }
-
-    &:hover {
-      color: $base-link-color;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &.is-active {
-      background-color: $tab-active-background;
-
-      @include media($tab-mode) {
-        background-color: $tab-active-background;
-        border: $tab-border;
-        border-bottom-color: $tab-active-background;
-        margin-bottom: -1px;
-      }
-    }
-  }
-
-  .tab-content {
-    @include animation(fadeIn 0.85s ease);
-    @include clearfix;
-    width: 100%;
-    background: $tab-content-background;
-    display: none;
-    padding: $base-spacing $gutter;
-
-    @include media($tab-mode) {
-      border-bottom-left-radius: $base-border-radius;
-      border-bottom-right-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      border: $tab-border;
-      float: left;
-    }
-  }
 }
