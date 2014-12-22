@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
-        <section class="gray-section">
-                <div class="page-title">
+        <section class="hero army-single-banner">
+            <div class="hero-inner">
+                <div class="hero-header">
                     <h2><?php the_title(); ?></h2>
                 </div>
+            </div>
         </section>
 
         <section class="content-block">
@@ -93,7 +95,7 @@
                                     <h2>Elites</h2>
                                 </div>
 
-                                <!-- display troop images-->
+                                <!-- display elite images-->
                                 <?php if( have_rows('elite_images') ): ?>
                                     <?php while ( have_rows('elite_images') ) : the_row(); ?>
                                         <img src="<?php the_sub_field('elite_image'); ?>">
@@ -107,7 +109,147 @@
                                         </div>
                                 <?php endif ?>
 
-                                <!-- display troop misc Gallery -->
+                                <!-- display elite misc Gallery -->
+                                <?php if( have_rows('elite_misc_gallery') ): ?>
+                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
+                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                    <?php endwhile; ?>
+                                <?php endif ?>
+
+                            </div><!-- tab-content -->
+                        </li><!-- tab-header-and-content -->
+
+                        <li class="tab-header-and-content fast-attack">
+                            <a href="javascript:void(0)" class="tab-link">
+                                <img src="<?php bloginfo('template_directory'); ?>/img/symbols/fa_chart_symbol.png" alt="Troop choice" class="army-chart-symbol">
+                            </a>
+                            <div class="tab-content">
+
+                                <div class="troop-entry-title">
+                                    <h2>Elites</h2>
+                                </div>
+
+                                <!-- display fast-attack images-->
+                                <?php if( have_rows('elite_images') ): ?>
+                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_image'); ?>">
+                                        <?php the_sub_field('elite_tech_description'); ?>
+                                        <?php the_sub_field('elite_background_info'); ?>
+                                    <?php endwhile; ?>
+
+                                    <?php else: ?>
+                                        <div class="no-content-yet">
+                                            <h4>No Troop Entries yet</h4>
+                                        </div>
+                                <?php endif ?>
+
+                                <!-- display fast-attack misc Gallery -->
+                                <?php if( have_rows('elite_misc_gallery') ): ?>
+                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
+                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                    <?php endwhile; ?>
+                                <?php endif ?>
+
+                            </div><!-- tab-content -->
+                        </li><!-- tab-header-and-content -->
+
+                        <li class="tab-header-and-content heavy-attack">
+                            <a href="javascript:void(0)" class="tab-link">
+                                <img src="<?php bloginfo('template_directory'); ?>/img/symbols/ha_chart_symbol.png" alt="Troop choice" class="army-chart-symbol">
+                            </a>
+                            <div class="tab-content">
+
+                                <div class="troop-entry-title">
+                                    <h2>Elites</h2>
+                                </div>
+
+                                <!-- display Heavy images-->
+                                <?php if( have_rows('elite_images') ): ?>
+                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_image'); ?>">
+                                        <?php the_sub_field('elite_tech_description'); ?>
+                                        <?php the_sub_field('elite_background_info'); ?>
+                                    <?php endwhile; ?>
+
+                                    <?php else: ?>
+                                        <div class="no-content-yet">
+                                            <h4>No Troop Entries yet</h4>
+                                        </div>
+                                <?php endif ?>
+
+                                <!-- display Heavy misc Gallery -->
+                                <?php if( have_rows('elite_misc_gallery') ): ?>
+                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
+                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                    <?php endwhile; ?>
+                                <?php endif ?>
+
+                            </div><!-- tab-content -->
+                        </li><!-- tab-header-and-content -->
+
+                        <li class="tab-header-and-content fortification">
+                            <a href="javascript:void(0)" class="tab-link">
+                                <img src="<?php bloginfo('template_directory'); ?>/img/symbols/fort_chart_symbol.png" alt="Troop choice" class="army-chart-symbol">
+                            </a>
+                            <div class="tab-content">
+
+                                <div class="troop-entry-title">
+                                    <h2>Elites</h2>
+                                </div>
+
+                                <!-- display fortification images-->
+                                <?php if( have_rows('elite_images') ): ?>
+                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_image'); ?>">
+                                        <?php the_sub_field('elite_tech_description'); ?>
+                                        <?php the_sub_field('elite_background_info'); ?>
+                                    <?php endwhile; ?>
+
+                                    <?php else: ?>
+                                        <div class="no-content-yet">
+                                            <h4>No Troop Entries yet</h4>
+                                        </div>
+                                <?php endif ?>
+
+                                <!-- display fortification misc Gallery -->
+                                <?php if( have_rows('elite_misc_gallery') ): ?>
+                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
+                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                    <?php endwhile; ?>
+                                <?php endif ?>
+
+                            </div><!-- tab-content -->
+                        </li><!-- tab-header-and-content -->
+
+                        <li class="tab-header-and-content lordsofwar">
+                            <a href="javascript:void(0)" class="tab-link">
+                                <img src="<?php bloginfo('template_directory'); ?>/img/symbols/lords_chart_symbol.png" alt="Troop choice" class="army-chart-symbol">
+                            </a>
+                            <div class="tab-content">
+
+                                <div class="troop-entry-title">
+                                    <h2>Elites</h2>
+                                </div>
+
+                                <!-- display lords images-->
+                                <?php if( have_rows('elite_images') ): ?>
+                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
+                                        <img src="<?php the_sub_field('elite_image'); ?>">
+                                        <?php the_sub_field('elite_tech_description'); ?>
+                                        <?php the_sub_field('elite_background_info'); ?>
+                                    <?php endwhile; ?>
+
+                                    <?php else: ?>
+                                        <div class="no-content-yet">
+                                            <h4>No Troop Entries yet</h4>
+                                        </div>
+                                <?php endif ?>
+
+                                <!-- display lords misc Gallery -->
                                 <?php if( have_rows('elite_misc_gallery') ): ?>
                                     <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
                                         <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">

@@ -7,9 +7,11 @@
 // --------------------------------------------------------------------------
 //  Army listing Boxes
 // --------------------------------------------------------------------------
-.gray-section {
-    @include section;
-    background-color: #F5f5f5;
+.army-single-banner {
+    background: url('../img/priests_wallpaper.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    // background-color: #F5f5f5;
 }
 .army-listing-boxes {
     @include section;
@@ -24,6 +26,11 @@
         margin-bottom: 2em;
     }
 }
+
+.box-listing {
+    @include animation(fadeIn 0.85s ease);
+}
+
 .box {
     @include clearfix;
     background-color: white;
@@ -137,6 +144,7 @@
   }
 
   .tab-content {
+    @include animation(fadeIn 0.85s ease);
     @include clearfix;
     width: 100%;
     background: $tab-content-background;

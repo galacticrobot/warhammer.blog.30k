@@ -868,20 +868,15 @@ footer {
   background-size: cover;
   height: 500px; }
 
-.site-main img {
-  max-width: 200px; }
-
 /*============================================================================
 
     ## Armies
 
 ============================================================================*/
-.gray-section {
-  padding: 2em 1em;
-  background-color: #F5f5f5; }
-  @media screen and (min-width: 40em) {
-    .gray-section {
-      padding: 5em 1em; } }
+.army-single-banner {
+  background: url("../img/priests_wallpaper.jpg") no-repeat center center;
+  background-size: cover;
+  height: 300px; }
 
 .army-listing-boxes {
   padding: 2em 1em;
@@ -900,6 +895,10 @@ footer {
     display: block;
     border-bottom: 1px solid #ddd;
     margin-bottom: 2em; }
+
+.box-listing {
+  -webkit-animation: fadeIn 0.85s ease;
+  animation: fadeIn 0.85s ease; }
 
 .box {
   background-color: white;
@@ -981,6 +980,8 @@ footer {
           border-bottom-color: #f7f7f7;
           margin-bottom: -1px; } }
   .accordion-tabs .tab-content {
+    -webkit-animation: fadeIn 0.85s ease;
+    animation: fadeIn 0.85s ease;
     width: 100%;
     background: #f7f7f7;
     display: none;

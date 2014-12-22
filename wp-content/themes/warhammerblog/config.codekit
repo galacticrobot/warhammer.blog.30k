@@ -87,6 +87,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/symbols\/elites_chart_symbol.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7795,
+		"inputAbbreviatedPath": "\/img\/symbols\/elites_chart_symbol.png",
+		"outputAbbreviatedPath": "\/img\/symbols\/elites_chart_symbol.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/symbols\/fa_chart_symbol.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7524,
+		"inputAbbreviatedPath": "\/img\/symbols\/fa_chart_symbol.png",
+		"outputAbbreviatedPath": "\/img\/symbols\/fa_chart_symbol.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/symbols\/fort_chart_symbol.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7647,
+		"inputAbbreviatedPath": "\/img\/symbols\/fort_chart_symbol.png",
+		"outputAbbreviatedPath": "\/img\/symbols\/fort_chart_symbol.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/symbols\/ha_chart_symbol.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8175,
+		"inputAbbreviatedPath": "\/img\/symbols\/ha_chart_symbol.png",
+		"outputAbbreviatedPath": "\/img\/symbols\/ha_chart_symbol.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/symbols\/hq_chart_symbol.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -94,6 +138,17 @@
 		"initialSize": 7298,
 		"inputAbbreviatedPath": "\/img\/symbols\/hq_chart_symbol.png",
 		"outputAbbreviatedPath": "\/img\/symbols\/hq_chart_symbol.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/symbols\/lords_chart_symbol.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8784,
+		"inputAbbreviatedPath": "\/img\/symbols\/lords_chart_symbol.png",
+		"outputAbbreviatedPath": "\/img\/symbols\/lords_chart_symbol.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
