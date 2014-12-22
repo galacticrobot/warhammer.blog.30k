@@ -1,0 +1,12 @@
+/*============================================================================
+
+    ## Mixins
+
+============================================================================*/
+
+@mixin section {
+    padding: $vertical-padding-small 1em;
+    @include media($medium-screen) {
+        padding: $vertical-padding 1em;
+    }
+}

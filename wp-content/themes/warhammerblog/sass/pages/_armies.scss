@@ -1,0 +1,154 @@
+/*============================================================================
+
+    ## Armies
+
+============================================================================*/
+
+// --------------------------------------------------------------------------
+//  Army listing Boxes
+// --------------------------------------------------------------------------
+.gray-section {
+    @include section;
+    background-color: #F5f5f5;
+}
+.army-listing-boxes {
+    @include section;
+    background-color: #F5f5f5;
+}
+.troop-entry {
+    @include clearfix;
+    padding-bottom: 2em;
+    .troop-entry-title {
+        display: block;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 2em;
+    }
+}
+.box {
+    @include clearfix;
+    background-color: white;
+    padding: 2em;
+    margin-bottom: 1em;
+    .box-image {
+        float: left;
+        // @include span-columns(6);
+        img {
+            max-width: 120px;
+        }
+    }
+    .box-content {
+        float: left;
+        margin-left: 2em;
+        // @include span-columns(6);
+        em {
+            font-family: $serif;
+        }
+    }
+}
+// --------------------------------------------------------------------------
+//  Sidebar
+// --------------------------------------------------------------------------
+.army-chart-symbol {
+    width: 80px;
+}
+
+.no-content-yet {
+    @include clearfix;
+    min-height: 200px;
+}
+// --------------------------------------------------------------------------
+//  Tabs
+// --------------------------------------------------------------------------
+.accordion-tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    $tab-border-color: $base-border-color;
+    $tab-border: 1px solid $tab-border-color;
+    $tab-content-background: lighten($light-gray, 10);
+    $tab-active-background: $tab-content-background;
+    $tab-inactive-color: #ddd; //$base-background-color
+    $tab-inactive-hover-color: darken($light-gray, 5);
+    $tab-mode: $medium-screen;
+
+    @include clearfix;
+    margin-bottom: $base-spacing;
+
+    @include media(max-width $tab-mode) {
+        border: $tab-border;
+        border-radius: $base-border-radius;
+    }
+
+  .tab-header-and-content {
+    @include media($tab-mode) {
+      display: inline;
+    }
+
+    &:first-child .tab-link {
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+
+      @include media(max-width $tab-mode) {
+        border-top: 0;
+      }
+    }
+
+    &:last-child .tab-link {
+      @include media(max-width $tab-mode) {
+        border-bottom-left-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+      }
+    }
+  }
+
+  .tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $dark-gray;
+    display: block;
+    font-weight: bold;
+    padding: $base-spacing/2 $gutter/2;
+
+    @include media($tab-mode) {
+      display: inline-block;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      border-top: 0;
+    }
+
+    &:hover {
+      color: $base-link-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      background-color: $tab-active-background;
+
+      @include media($tab-mode) {
+        background-color: $tab-active-background;
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    @include clearfix;
+    width: 100%;
+    background: $tab-content-background;
+    display: none;
+    padding: $base-spacing $gutter;
+
+    @include media($tab-mode) {
+      border-bottom-left-radius: $base-border-radius;
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      border: $tab-border;
+      float: left;
+    }
+  }
+}

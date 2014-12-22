@@ -1,0 +1,17 @@
+/*============================================================================
+
+    ## Home Page
+
+============================================================================*/
+
+.home-page {
+    background: url('../img/priests_wallpaper.jpg') no-repeat center center;
+    background-size: cover;
+    height: 500px;
+}
+
+.site-main {
+    img {
+        max-width: 200px;
+    }
+}

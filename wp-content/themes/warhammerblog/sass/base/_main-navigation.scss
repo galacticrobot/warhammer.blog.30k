@@ -1,0 +1,82 @@
+/*============================================================================
+
+    ## Main Navigation
+
+============================================================================*/
+
+$main-nav-bg-color: $dark-purple;
+
+.main-nav-container {
+    background-color: $main-nav-bg-color;
+    nav {
+        padding: 0;
+        @include media($medium-screen) {
+            padding: 1em 0;
+        }
+    }
+
+    @include media($medium-screen) {
+        padding: 0 1em;
+    }
+}
+
+//  Menu styles
+// ----------------------------------------------
+.main-top-nav {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: block;
+        @include media($medium-screen) {
+            float: left;
+            display: inline-block;
+        }
+    }
+    a {
+        display: block;
+        position: relative;
+        text-align: center;
+        color: #fff;
+        font-family: $base-font-family;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        padding: 1.5em 0;
+        font-size: 1.1rem;
+        @include media($medium-screen) {
+            font-size: 0.8rem;
+            padding: 1.5em 2em 1.5em 0;
+            //padding: 2em 2em 2em 0;
+        }
+        text-decoration: none;
+
+        // -webkit-transition: background-color 0.3s ease-in-out;
+        // -moz-transition: background-color 0.3s ease-in-out;
+        // -o-transition: background-color 0.3s ease-in-out;
+        // -ms-transition: background-color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            color: #fff;
+            background-color: lighten($main-nav-bg-color, 10%);
+            @include media($medium-screen) {
+                background-color: transparent;
+                color: lighten($main-nav-bg-color, 40%);
+            }
+        }
+        // fixed nav
+        // @include breakpoint($bpMedium-2) {
+        //     display: block;
+        //     text-align: left;
+        //     padding: 0.3rem 0 0.3rem 1rem;
+        //     border-bottom: none;
+        //     border-top: none;
+        //     &:hover {
+        //         color: #A88248;
+        //         background-color: transparent;
+        //         border-top: none;
+        //     }
+        // }
+    }
+}
