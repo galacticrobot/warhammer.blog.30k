@@ -689,7 +689,8 @@ html {
 
 ============================================================================*/
 .hero {
-  padding: 2em 1em; }
+  padding: 2em 1em;
+  position: relative; }
   @media screen and (min-width: 40em) {
     .hero {
       padding: 5em 1em; } }
@@ -705,6 +706,17 @@ html {
       color: #fff; }
       .hero .hero-inner .hero-header h1 {
         font-size: 60px; }
+    .hero .hero-inner .hero-header-single {
+      position: absolute;
+      left: 0;
+      background-color: rgba(36, 36, 45, 0.5);
+      padding: 1em;
+      color: #fff;
+      width: 80%; }
+      @media screen and (min-width: 40em) {
+        .hero .hero-inner .hero-header-single {
+          width: 30%;
+          text-align: right; } }
 
 .content-block {
   padding: 2em 1em;
@@ -807,13 +819,12 @@ html {
       font-family: "Radley", serif; }
 
 .button, button {
-  background-color: #56405f;
+  background-color: #515166;
   border: none;
   outline: none;
-  padding: 1.25rem 3rem 1.15rem;
-  font-size: 0.75rem;
+  padding: 0.9375em 1.25em;
+  font-size: 0.75em;
   border-radius: 2rem;
-  font-family: "brandon-grotesque",sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   color: #4C5650;
@@ -822,7 +833,7 @@ html {
   -webkit-transition: background-color .4s ease;
           transition: background-color .4s ease; }
   .button:hover, button:hover {
-    background-color: #72557d;
+    background-color: #686882;
     color: white; }
 
 /*============================================================================
@@ -831,7 +842,7 @@ html {
 
 ============================================================================*/
 .main-nav-container {
-  background-color: #1f1722; }
+  background-color: #24242D; }
   .main-nav-container nav {
     padding: 0; }
     @media screen and (min-width: 40em) {
@@ -874,11 +885,11 @@ html {
         padding: 1.5em 2em 1.5em 0; } }
     .main-top-nav a:hover {
       color: #fff;
-      background-color: #3b2c40; }
+      background-color: #3b3b49; }
       @media screen and (min-width: 40em) {
         .main-top-nav a:hover {
           background-color: transparent;
-          color: #8d6a9b; } }
+          color: #82829b; } }
 
 /*============================================================================
 
@@ -892,10 +903,14 @@ html {
 ============================================================================*/
 footer {
   padding: 2em 1em;
-  height: 300px; }
+  height: 300px;
+  color: #494949; }
   @media screen and (min-width: 40em) {
     footer {
       padding: 5em 1em; } }
+
+.site-info {
+  text-align: center; }
 
 /*============================================================================
 
@@ -1125,6 +1140,21 @@ footer {
 
 .battlerep-full {
   border-top: 1px solid #ddd;
+  padding-top: 2em; }
+
+/*============================================================================
+
+    ## News / HOME.PHP
+
+============================================================================*/
+.news-entry {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1em;
+  padding-bottom: 1em; }
+  .news-entry p.type a {
+    color: #000; }
+
+.entry-content {
   padding-top: 2em; }
 
 /*# sourceMappingURL=main.css.map */

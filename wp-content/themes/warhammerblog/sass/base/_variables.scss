@@ -49,13 +49,15 @@ $light-gray: #DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
-
 $dark-purple: #1f1722;
+
+$main-site-color: #24242D;
 
 //  Background Color
 // ----------------------------------------------
 $base-background-color: #161616; //161616 grey //161018
 
+$footer-text-color: lighten($base-background-color, 20%);
 //  Font Colors
 // ----------------------------------------------
 $base-font-color: $dark-gray;

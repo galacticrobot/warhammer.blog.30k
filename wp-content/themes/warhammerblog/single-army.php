@@ -2,7 +2,7 @@
 
         <section class="hero army-single-banner" style="background-image:url(<?php the_field('banner_image'); ?>); background-position: center center;" >
             <div class="hero-inner">
-                <div class="hero-header">
+                <div class="hero-header-single">
                     <h2><?php the_title(); ?></h2>
                 </div>
             </div>

@@ -1,13 +1,13 @@
-$main-button-color: $dark-purple;
+$main-button-color: $main-site-color;
 
 .button, button {
     background-color: lighten($main-button-color, 20%);
     border: none;
     outline: none;
-    padding: 1.25rem 3rem 1.15rem;
-    font-size: 0.75rem;
+    padding: em(15) em(20);
+    // padding: 1.25rem 3rem 1.15rem;
+    font-size: em(12);
     border-radius: 2rem;
-    font-family: "brandon-grotesque",sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #4C5650;

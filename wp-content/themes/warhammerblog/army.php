@@ -7,7 +7,7 @@
 get_header(); ?>
 
         <section class="content-block army-listing-boxes">
-            <div class="container box-listing">
+            <div class="container box-listing single-comlumn-page">
 
                 <?php
                     $args = array(

@@ -7,4 +7,9 @@
 footer {
     @include section;
     height: 300px;
+    color: $footer-text-color;
+}
+
+.site-info {
+    text-align: center;
 }
