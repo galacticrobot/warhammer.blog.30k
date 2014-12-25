@@ -8,3 +8,9 @@ html {
     background-color: $base-background-color;
 }
 
+//chrome fix
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    html {
+        margin-bottom: -1px;
+    }
+}

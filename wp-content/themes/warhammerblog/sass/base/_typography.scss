@@ -185,5 +185,12 @@ article {
 // --------------------------------------------------------------------------
 
 .page-title {
-    text-align: center;
+    // text-align: center;
+    font-family: $serif;
+    font-weight: 800;
+    margin-bottom: .3em;
+
+    @include media($large-screen) {
+      margin-bottom: .4em;
+    }
 }

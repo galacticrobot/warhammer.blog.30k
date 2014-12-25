@@ -11,7 +11,7 @@ get_header(); ?>
 
                 <?php
                     $args = array(
-                        'post_type' => 'Army'
+                        'post_type' => 'army'
                     );
 
                     $the_query = new Wp_Query( $args )
@@ -26,7 +26,7 @@ get_header(); ?>
                         </div>
                         <div class="box-content">
                             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <em>Played by: <?php the_field('played_by'); ?></em>
+                            <em><strong>Played by:</strong> <?php the_field('played_by'); ?></em>
                         </div>
                     </div>
 

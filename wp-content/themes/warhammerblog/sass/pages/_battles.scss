@@ -1,0 +1,44 @@
+/*============================================================================
+
+    ## Battles
+
+============================================================================*/
+
+.battlereport-item {
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    &:nth-child(odd) {
+        background-color: #f8f8f8;
+    }
+
+    &:last-child {
+        border-bottom: 1px solid #ddd;
+    }
+    span {
+        font-weight: 600;
+    }
+}
+
+.battlereport-item-date {
+    color: transparentize($base-font-color, .6);
+    font-family: $serif;
+    font-style: italic;
+    margin-bottom: .3em;
+}
+
+.battlerep-meta {
+    span {
+        display: block;
+    }
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.battlerep-info {
+    margin-bottom: 1em;
+}
+
+.battlerep-full {
+    border-top: 1px solid #ddd;
+    padding-top: 2em;
+}

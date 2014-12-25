@@ -1,0 +1,33 @@
+/*============================================================================
+
+    ## Terrain
+
+============================================================================*/
+.single-terrain-page {
+    max-width: 800px;
+}
+
+.single-terrain-page-title {
+    margin-bottom: 1em;
+}
+
+
+.single-terrain-page-image {
+    margin-bottom: 1em;
+}
+
+.single-terrain-page-desc {
+    margin-bottom: 1em;
+}
+
+.terrain-gallery {
+    @include clearfix;
+}
+
+.terrain-gallery-item {
+    padding: .5em .5em .2em .5em;
+    border: 1px solid #ddd;
+    margin-bottom: 1.4em;
+    @include span-columns(3);
+    @include omega(4n);
+}

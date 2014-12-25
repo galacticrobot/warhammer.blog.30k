@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 
+        <!--Custom Page Title, Grabs Image from Custom Field-->
+
         <section class="hero home-page">
             <div class="hero-inner">
                 <div class="hero-header">
-                    <h1>Mechanicum</h1>
-                    <p>balls</p>
+                    <h1>30k Gaming</h1>
+                    <p>A tale of Six Armies</p>
                 </div>
             </div>
         </section>

@@ -13,45 +13,9 @@
     height: 300px;
     // background-color: #F5f5f5;
 }
-.army-listing-boxes {
-    @include section;
-    background-color: #F5f5f5;
-}
-// .troop-entry {
-//     @include clearfix;
-//     padding-bottom: 2em;
-//     .troop-entry-title {
-//         display: block;
-//         border-bottom: 1px solid #ddd;
-//         margin-bottom: 2em;
-//     }
-// }
-.box-listing {
-    @include animation(fadeIn 0.85s ease);
-}
-.box {
-    @include clearfix;
-    background-color: white;
-    padding: 2em;
-    margin-bottom: 1em;
-    .box-image {
-        float: left;
-        // @include span-columns(6);
-        img {
-            max-width: 120px;
-        }
-    }
-    .box-content {
-        float: left;
-        margin-left: 2em;
-        // @include span-columns(6);
-        em {
-            font-family: $serif;
-        }
-    }
-}
+
 // --------------------------------------------------------------------------
-//  Sidebar
+//  Army Single Page
 // --------------------------------------------------------------------------
 .army-chart-symbol {
     max-width: 70px;
@@ -59,16 +23,6 @@
 .no-content-yet {
     @include clearfix;
     min-height: 200px;
-}
-.troop-entry {
-    margin-bottom: $vertical-padding;
-    @include clearfix;
-    .image-container {
-        @include span-columns(7);
-    }
-    .stats-container {
-        @include span-columns(5);
-    }
 }
 // --------------------------------------------------------------------------
 //  Tabs
@@ -109,6 +63,12 @@
         }
     }
     .tab-link {
+        border-bottom: 1px solid #bbb;
+        border-top: 1px solid #bbb;
+        @include media($medium-screen) {
+            border-bottom: none;
+            border-top: none;
+        }
         background-color: $tab-inactive-color;
         border-top: $tab-border;
         color: $dark-gray;
@@ -150,6 +110,55 @@
             border-top-right-radius: $base-border-radius;
             border: $tab-border;
             float: left;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+//  TROOPS display
+// --------------------------------------------------------------------------
+
+.troop-entry-main {
+    margin-bottom: $vertical-padding;
+    @include clearfix;
+
+    .image-container {
+        margin-bottom: 2em;
+    }
+
+
+    @include media($desktop) {
+        .image-container {
+            @include span-columns(7);
+        }
+        .stats-container {
+            @include span-columns(5);
+        }
+    }
+}
+
+.troop-entry-title {
+    margin-bottom: $vertical-padding-small;
+    display: block;
+    @include media($medium-screen) {
+        border-bottom: 1px solid #ddd;
+        h2 {
+            padding-bottom: 1em;
+        }
+    }
+}
+
+
+.misc-entry-gallery {
+    @include clearfix;
+    .misc-gallery-item {
+        display: inline-block;
+        @include span-columns(2);
+        @include omega(6n);
+        margin-bottom: 1em;
+
+        .misc-gallery-item-desc {
+            display: block;
         }
     }
 }

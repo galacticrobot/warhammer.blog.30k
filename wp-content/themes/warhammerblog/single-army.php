@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-        <section class="hero army-single-banner">
+        <section class="hero army-single-banner" style="background-image:url(<?php the_field('banner_image'); ?>); background-position: center center;" >
             <div class="hero-inner">
                 <div class="hero-header">
                     <h2><?php the_title(); ?></h2>
@@ -29,9 +29,16 @@
                                 <!-- display hq images-->
                                 <?php if( have_rows('hq_images') ): ?>
                                     <?php while ( have_rows('hq_images') ) : the_row(); ?>
-                                        <article class="troop-entry">
+                                        <article class="troop-entry-main">
                                             <div class="image-container">
-                                                <img src="<?php the_sub_field('hq_image'); ?>">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('hq_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('hq_image'); ?>"></a>
                                             </div>
                                             <div class="stats-container">
                                                <div class="tech-stats"><?php the_sub_field('hq_tech_description'); ?></div>
@@ -41,17 +48,27 @@
                                     <?php endwhile; ?>
                                 <?php else: ?>
                                     <div class="no-content-yet">
-                                        <h4>No HQ Entries yet</h4>
+                                        <p>This section has no content yet. Check back later.</p>
                                     </div>
                                 <?php endif ?>
 
+                                <div class="misc-entry-gallery">
                                 <!-- display hq misc Gallery -->
                                 <?php if( have_rows('hq_misc_gallery') ): ?>
                                     <?php while ( have_rows('hq_misc_gallery') ) : the_row(); ?>
-                                    <img src="<?php the_sub_field('hq_misc_gallery_image'); ?>">
-                                    <?php the_sub_field('hq_misc_gallery_image_description'); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('hq_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('hq_misc_gallery_image'); ?>"></a>
+                                        </div>
                                 <?php endwhile; ?>
                                 <?php endif ?>
+                                </div>
 
                             </div><!-- tab-content -->
                         </li><!-- tab-header-and-content -->
@@ -69,24 +86,46 @@
                                 <!-- display troop images-->
                                 <?php if( have_rows('troop_images') ): ?>
                                     <?php while ( have_rows('troop_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('troop_image'); ?>">
-                                        <?php the_sub_field('troop_tech_description'); ?>
-                                        <?php the_sub_field('troop_background_info'); ?>
+                                        <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('troop_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('troop_image'); ?>"></a>
+                                            </div>
+                                            <div class="stats-container">
+                                                <div class="tech-stats"><?php the_sub_field('troop_tech_description'); ?></div>
+                                                <div class="background-stats"><?php the_sub_field('troop_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
-
                                     <?php else: ?>
                                         <div class="no-content-yet">
-                                            <h4>No Troop Entries yet</h4>
+                                            <p>This section has no content yet. Check back later.</p>
                                         </div>
                                 <?php endif ?>
 
                                 <!-- display troop misc Gallery -->
-                                <?php if( have_rows('troop_misc_gallery') ): ?>
-                                    <?php while ( have_rows('troop_misc_gallery') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('troop_misc_gallery_image'); ?>">
-                                        <?php the_sub_field('troop_misc_gallery_image_description'); ?>
-                                    <?php endwhile; ?>
-                                <?php endif ?>
+                                <div class="misc-entry-gallery">
+                                    <?php if( have_rows('troop_misc_gallery') ): ?>
+                                        <?php while ( have_rows('troop_misc_gallery') ) : the_row(); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('troop_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('troop_misc_gallery_image'); ?>"></a>
+                                        </div>
+                                        <?php endwhile; ?>
+                                    <?php endif ?>
+                                </div>
 
                             </div><!-- tab-content -->
                         </li><!-- tab-header-and-content -->
@@ -104,22 +143,43 @@
                                 <!-- display elite images-->
                                 <?php if( have_rows('elite_images') ): ?>
                                     <?php while ( have_rows('elite_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_image'); ?>">
-                                        <?php the_sub_field('elite_tech_description'); ?>
-                                        <?php the_sub_field('elite_background_info'); ?>
+                                       <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('elite_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('elite_image'); ?>"></a>
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('elite_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('elite_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
 
                                     <?php else: ?>
                                         <div class="no-content-yet">
-                                            <h4>No Troop Entries yet</h4>
+                                           <p>This section has no content yet. Check back later.</p>
                                         </div>
                                 <?php endif ?>
 
                                 <!-- display elite misc Gallery -->
                                 <?php if( have_rows('elite_misc_gallery') ): ?>
                                     <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
-                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('elite_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('elite_misc_gallery_image'); ?>"></a>
+                                        </div>
                                     <?php endwhile; ?>
                                 <?php endif ?>
 
@@ -133,28 +193,49 @@
                             <div class="tab-content">
 
                                 <div class="troop-entry-title">
-                                    <h2>Elites</h2>
+                                    <h2>Fast Attack</h2>
                                 </div>
 
                                 <!-- display fast-attack images-->
-                                <?php if( have_rows('elite_images') ): ?>
-                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_image'); ?>">
-                                        <?php the_sub_field('elite_tech_description'); ?>
-                                        <?php the_sub_field('elite_background_info'); ?>
+                                <?php if( have_rows('fast_attack_images') ): ?>
+                                    <?php while ( have_rows('fast_attack_images') ) : the_row(); ?>
+                                        <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('fast_attack_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('fast_attack_image'); ?>"></a>
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('fast_attack_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('fast_attack_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
 
                                     <?php else: ?>
                                         <div class="no-content-yet">
-                                            <h4>No Troop Entries yet</h4>
+                                            <p>This section has no content yet. Check back later.</p>
                                         </div>
                                 <?php endif ?>
 
                                 <!-- display fast-attack misc Gallery -->
-                                <?php if( have_rows('elite_misc_gallery') ): ?>
-                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
-                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                <?php if( have_rows('fast_attack_misc_gallery') ): ?>
+                                    <?php while ( have_rows('fast_attack_misc_gallery') ) : the_row(); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('fast_attack_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('fast_attack_misc_gallery_image'); ?>"></a>
+                                            </div>
                                     <?php endwhile; ?>
                                 <?php endif ?>
 
@@ -181,7 +262,7 @@
 
                                     <?php else: ?>
                                         <div class="no-content-yet">
-                                            <h4>No Troop Entries yet</h4>
+                                            <p>This section has no content yet. Check back later.</p>
                                         </div>
                                 <?php endif ?>
 
@@ -216,7 +297,7 @@
 
                                     <?php else: ?>
                                         <div class="no-content-yet">
-                                            <h4>No Troop Entries yet</h4>
+                                            <p>This section has no content yet. Check back later.</p>
                                         </div>
                                 <?php endif ?>
 
@@ -251,7 +332,7 @@
 
                                     <?php else: ?>
                                         <div class="no-content-yet">
-                                            <h4>No Troop Entries yet</h4>
+                                            <p>This section has no content yet. Check back later.</p>
                                         </div>
                                 <?php endif ?>
 

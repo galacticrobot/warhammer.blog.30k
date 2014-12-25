@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
         <section class="content-block">
-            <div class="container">
+            <div class="container single-comlumn-page">
                 <!-- ze loop -->
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <article>

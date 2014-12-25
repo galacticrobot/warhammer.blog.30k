@@ -501,6 +501,9 @@ table {
     display: table;
     clear: both; }
 
+.single-comlumn-page {
+  max-width: 50em; }
+
 /*============================================================================
 
     ## Typography
@@ -662,7 +665,12 @@ article {
     font-style: italic; }
 
 .page-title {
-  text-align: center; }
+  font-family: "Radley", serif;
+  font-weight: 800;
+  margin-bottom: .3em; }
+  @media screen and (min-width: 53.75em) {
+    .page-title {
+      margin-bottom: .4em; } }
 
 /*============================================================================
 
@@ -672,6 +680,9 @@ article {
 html {
   background-color: #161616; }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  html {
+    margin-bottom: -1px; } }
 /*============================================================================
 
     ## Modules
@@ -720,7 +731,6 @@ html {
       margin-right: 0; } }
 .intro-text {
   margin-bottom: 5em;
-  margin-top: 4em;
   text-align: center; }
   .intro-text h2 {
     font-family: "Radley", serif;
@@ -766,6 +776,35 @@ html {
       .intro-text p a span {
         font-size: 1.3em;
         line-height: 0; }
+
+.army-listing-boxes {
+  padding: 2em 1em;
+  background-color: #F5f5f5; }
+  @media screen and (min-width: 40em) {
+    .army-listing-boxes {
+      padding: 5em 1em; } }
+
+.box-listing {
+  -webkit-animation: fadeIn 0.85s ease;
+  animation: fadeIn 0.85s ease; }
+
+.box {
+  background-color: white;
+  padding: 2em;
+  margin-bottom: 1em; }
+  .box:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .box .box-image {
+    float: left; }
+    .box .box-image img {
+      max-width: 120px; }
+  .box .box-content {
+    float: left;
+    margin-left: 2em; }
+    .box .box-content em {
+      font-family: "Radley", serif; }
 
 .button, button {
   background-color: #56405f;
@@ -878,35 +917,6 @@ footer {
   background-size: cover;
   height: 300px; }
 
-.army-listing-boxes {
-  padding: 2em 1em;
-  background-color: #F5f5f5; }
-  @media screen and (min-width: 40em) {
-    .army-listing-boxes {
-      padding: 5em 1em; } }
-
-.box-listing {
-  -webkit-animation: fadeIn 0.85s ease;
-  animation: fadeIn 0.85s ease; }
-
-.box {
-  background-color: white;
-  padding: 2em;
-  margin-bottom: 1em; }
-  .box:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .box .box-image {
-    float: left; }
-    .box .box-image img {
-      max-width: 120px; }
-  .box .box-content {
-    float: left;
-    margin-left: 2em; }
-    .box .box-content em {
-      font-family: "Radley", serif; }
-
 .army-chart-symbol {
   max-width: 70px; }
 
@@ -916,27 +926,6 @@ footer {
     content: "";
     display: table;
     clear: both; }
-
-.troop-entry {
-  margin-bottom: 5em; }
-  .troop-entry:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .troop-entry .image-container {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 57.3509785009%; }
-    .troop-entry .image-container:last-child {
-      margin-right: 0; }
-  .troop-entry .stats-container {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 40.2913699012%; }
-    .troop-entry .stats-container:last-child {
-      margin-right: 0; }
 
 .accordion-tabs {
   list-style-type: none;
@@ -965,12 +954,18 @@ footer {
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px; } }
   .accordion-tabs .tab-link {
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #bbb;
     background-color: #ddd;
     border-top: 1px solid #DDD;
     color: #333;
     display: block;
     font-weight: bold;
     padding: 0.75em 0.809em; }
+    @media screen and (min-width: 40em) {
+      .accordion-tabs .tab-link {
+        border-bottom: none;
+        border-top: none; } }
     @media screen and (min-width: 40em) {
       .accordion-tabs .tab-link {
         display: inline-block;
@@ -1007,5 +1002,129 @@ footer {
         border-top-right-radius: 3px;
         border: 1px solid #DDD;
         float: left; } }
+
+.troop-entry-main {
+  margin-bottom: 5em; }
+  .troop-entry-main:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .troop-entry-main .image-container {
+    margin-bottom: 2em; }
+  @media screen and (min-width: 58.75em) {
+    .troop-entry-main .image-container {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 57.3509785009%; }
+      .troop-entry-main .image-container:last-child {
+        margin-right: 0; }
+    .troop-entry-main .stats-container {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 40.2913699012%; }
+      .troop-entry-main .stats-container:last-child {
+        margin-right: 0; } }
+
+.troop-entry-title {
+  margin-bottom: 2em;
+  display: block; }
+  @media screen and (min-width: 40em) {
+    .troop-entry-title {
+      border-bottom: 1px solid #ddd; }
+      .troop-entry-title h2 {
+        padding-bottom: 1em; } }
+
+.misc-entry-gallery:after {
+  content: "";
+  display: table;
+  clear: both; }
+.misc-entry-gallery .misc-gallery-item {
+  display: inline-block;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 14.7019570017%;
+  margin-bottom: 1em; }
+  .misc-entry-gallery .misc-gallery-item:last-child {
+    margin-right: 0; }
+  .misc-entry-gallery .misc-gallery-item:nth-child(6n) {
+    margin-right: 0; }
+  .misc-entry-gallery .misc-gallery-item:nth-child(6n+1) {
+    clear: left; }
+  .misc-entry-gallery .misc-gallery-item .misc-gallery-item-desc {
+    display: block; }
+
+/*============================================================================
+
+    ## Terrain
+
+============================================================================*/
+.single-terrain-page {
+  max-width: 800px; }
+
+.single-terrain-page-title {
+  margin-bottom: 1em; }
+
+.single-terrain-page-image {
+  margin-bottom: 1em; }
+
+.single-terrain-page-desc {
+  margin-bottom: 1em; }
+
+.terrain-gallery:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.terrain-gallery-item {
+  padding: .5em .5em .2em .5em;
+  border: 1px solid #ddd;
+  margin-bottom: 1.4em;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
+  .terrain-gallery-item:last-child {
+    margin-right: 0; }
+  .terrain-gallery-item:nth-child(4n) {
+    margin-right: 0; }
+  .terrain-gallery-item:nth-child(4n+1) {
+    clear: left; }
+
+/*============================================================================
+
+    ## Battles
+
+============================================================================*/
+.battlereport-item {
+  border-top: 1px solid #ddd;
+  padding: 1em; }
+  .battlereport-item:nth-child(odd) {
+    background-color: #f8f8f8; }
+  .battlereport-item:last-child {
+    border-bottom: 1px solid #ddd; }
+  .battlereport-item span {
+    font-weight: 600; }
+
+.battlereport-item-date {
+  color: rgba(51, 51, 51, 0.4);
+  font-family: "Radley", serif;
+  font-style: italic;
+  margin-bottom: .3em; }
+
+.battlerep-meta {
+  margin-top: 2em;
+  margin-bottom: 1em; }
+  .battlerep-meta span {
+    display: block; }
+
+.battlerep-info {
+  margin-bottom: 1em; }
+
+.battlerep-full {
+  border-top: 1px solid #ddd;
+  padding-top: 2em; }
 
 /*# sourceMappingURL=main.css.map */
