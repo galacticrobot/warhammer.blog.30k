@@ -45,7 +45,8 @@ $main-nav-bg-color: $main-site-color;
         padding: 1.5em 0;
         font-size: 1.1rem;
         @include media($medium-screen) {
-            font-size: 0.8rem;
+            font-size: em(13);
+            font-weight: 600;
             padding: 1.5em 2em 1.5em 0;
             //padding: 2em 2em 2em 0;
         }

@@ -35,6 +35,9 @@
 .content-block {
     @include section;
     background-color: #fff;
+    &.army-listing-page {
+        background-color: #f8f8f8;
+    }
 }
 
 #secondary {
@@ -55,6 +58,16 @@
         border-left: $base-border;
     }
 }
+
+@include media($large-screen) {
+    .landing-primary-container {
+        @include span-columns(6);
+    }
+    .landing-secondary-container {
+        @include span-columns(6);
+    }
+}
+
 // --------------------------------------------------------------------------
 //  Intro Text
 // --------------------------------------------------------------------------

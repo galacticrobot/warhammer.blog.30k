@@ -6,47 +6,86 @@
             <div class="hero-inner">
                 <div class="hero-header">
                     <h1>30k Gaming</h1>
-                    <p>A tale of Six Armies</p>
+                    <p style="max-width: 500px;">A site about battles minis paintings and other tom foolery.
+Please check back to this page once in a while. We’re still building out all the features.</p>
                 </div>
             </div>
         </section>
 
         <section class="content-block page-intro">
-            <div class="container">
-                <div class="intro-text">
-                    <h3>Topic Label</h3>
-                    <h2>Intro Text Heading</h2>
-                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta rerum libero iste saepe.</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur consectetur adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo. Amet, consectetur adipisicing. <a href="javascript:void(0)">Read more <span>&#187;</span></a></p>
+            <div class="container single-comlumn-page">
+
+                <!-- ze loop -->
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <div>
+                    <?php the_content() ?>
                 </div>
+
+                <?php endwhile; else: ?>
+                    <h4>Sorry. Can't find anything to display</h4>
+                <?php endif; ?>
+
             </div>
         </section>
 
-        <section class="army-listing-boxes">
-            <div class="container">
+        <section class="content-block landing-news-section" style="background-color: #f8f8f8">
+            <div class="container single-comlumn-page">
 
-                <div class="intro-text">
-                    <h2>Armies</h2>
-                </div>
-
-<!--                 <div class="box">
-                    <div class="box-image">
-                        <img src="http://placehold.it/150&text=placehold.it+rocks!" alt="" />
-                    </div>
-                    <div class="box-content">
-                        <h4>Sons of Horus</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ea nihil commodi vitae eum excepturi quos non eos, ipsa distinctio, aliquid quae, tenetur a sunt alias! Eligendi, suscipit quos voluptatum?</p>
-                        <p>Played by: Pontus</p>
-                    </div>
-                </div> -->
+                <ul>
+                    <?php $the_query = new WP_Query( 'showposts=1' ); ?>
+                    <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+                    <li>
+                        <div>
+                            <h3>Latest News</h3>
+                            <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                            <p><?php echo substr(strip_tags($post->post_content), 0, 200);?></p>
+                            <p><a href="<?php the_permalink() ?>"> Read more <span>&#187;</span></a></p>
+                        </div>
+                    </li>
+                    <?php endwhile;?>
+                </ul>
 
             </div>
         </section>
 
         <section class="content-block">
             <div class="container">
-                <p>content block</p>
+
+                <div class="landing-primary-container">
+
+                    <?php
+                        $args = array(
+                            'post_type' => 'battles',
+                            'showposts' => '1'
+                        );
+
+                        $the_query = new Wp_Query( $args )
+                     ?>
+
+                    <!-- ze loop -->
+                    <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                        <h3>Latest Battlereports</h3>
+
+                        <div>
+                            <p class="battlereport-item-date"><?php the_time( 'F j, Y'); ?></p>
+                            <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                            <div><span><?php the_field('participant_one'); ?></span> vs. <span><?php the_field('participant_two'); ?></span></div>
+                        </div>
+
+                    <?php endwhile; wp_reset_postdata(); ?>
+
+                        <?php //wp_reset_postdata(); ?>
+
+                    <?php endif; // ends loop?>
+
+                </div>
+
+                <div class="landing-secondary-container">
+                    <h3>Latest Battlereports</h3>
+                </div>
+
             </div>
-        </section><!-- content-block -->
+        </section>
 
 <?php get_footer(); ?>
