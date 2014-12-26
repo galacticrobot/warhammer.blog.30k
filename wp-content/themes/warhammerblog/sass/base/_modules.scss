@@ -36,12 +36,23 @@
     @include section;
     background-color: #fff;
 }
-@include media($medium-screen) {
+
+#secondary {
+    padding-top: 2em;
+    border-top: 6px double #ddd;
+}
+
+@include media($large-screen) {
     #primary {
         @include span-columns(8);
     }
     #secondary {
         @include span-columns(4);
+        padding-top: 0;
+        border-top: none;
+        min-height: 1000px;
+        border-left: 6px double #ddd;
+
     }
 }
 // --------------------------------------------------------------------------

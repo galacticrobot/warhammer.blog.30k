@@ -8,6 +8,10 @@
     border-bottom: 1px solid #ddd;
     margin-bottom: 1em;
     padding-bottom: 1em;
+    &:last-child {
+        border-bottom: none;
+    }
+
     p.type {
         a {
             color: #000;

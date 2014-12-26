@@ -1,0 +1,40 @@
+                                <!-- display hq images-->
+                                <?php if( have_rows('hq_images') ): ?>
+                                    <?php while ( have_rows('hq_images') ) : the_row(); ?>
+                                        <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <img src="<?php the_sub_field('hq_image'); ?>">
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('hq_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('hq_background_info'); ?></div>
+                                            </div>
+                                        </article>
+                                    <?php endwhile; ?>
+                                <?php else: ?>
+                                    <div class="no-content-yet">
+                                        <p>This section has no content yet. Check back later.</p>
+                                    </div>
+                                <?php endif ?>
+
+                                <div class="troop-entry-title">
+                                    <h3>Misc Gallery</h3>
+                                </div>
+
+                                <div class="misc-entry-gallery">
+                                <!-- display hq misc Gallery -->
+                                <?php if( have_rows('hq_misc_gallery') ): ?>
+                                    <?php while ( have_rows('hq_misc_gallery') ) : the_row(); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('hq_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('hq_misc_gallery_image'); ?>"></a>
+                                        </div>
+                                <?php endwhile; ?>
+                                <?php endif ?>
+                                </div>

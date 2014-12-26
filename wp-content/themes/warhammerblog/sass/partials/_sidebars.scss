@@ -1,0 +1,46 @@
+/*============================================================================
+
+    ## Sidebars
+
+============================================================================*/
+.sidebar-news {
+    @include media($large-screen) {
+        padding-left: 1.3em;
+    }
+}
+
+// --------------------------------------------------------------------------
+//  Widgets
+// --------------------------------------------------------------------------
+
+.widgettitle {
+    //background-color: transparentize($main-site-color, .5);
+    //padding: .4em .5em;
+    //color: white;
+    font-family: $base-font-family;
+    text-transform: uppercase;
+    font-size: em(18);
+    padding-bottom: 1em;
+    border-bottom: 6px double #ddd;
+}
+
+.widget_recent_entries {
+    padding-bottom: 2em;
+    ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+            border-bottom: 1px solid #ddd;
+            padding: em(10) 0;
+            &:last-child {
+                border-bottom: none;
+            }
+            a {
+                display: block;
+            }
+            .post-date {
+                font-size: em(12);
+            }
+        }
+    }
+}

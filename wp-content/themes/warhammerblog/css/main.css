@@ -725,7 +725,11 @@ html {
     .content-block {
       padding: 5em 1em; } }
 
-@media screen and (min-width: 40em) {
+#secondary {
+  padding-top: 2em;
+  border-top: 6px double #ddd; }
+
+@media screen and (min-width: 53.75em) {
   #primary {
     float: left;
     display: block;
@@ -738,7 +742,11 @@ html {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 31.7615656014%; }
+    width: 31.7615656014%;
+    padding-top: 0;
+    border-top: none;
+    min-height: 1000px;
+    border-left: 6px double #ddd; }
     #secondary:last-child {
       margin-right: 0; } }
 .intro-text {
@@ -911,6 +919,37 @@ footer {
 
 .site-info {
   text-align: center; }
+
+/*============================================================================
+
+    ## Sidebars
+
+============================================================================*/
+@media screen and (min-width: 53.75em) {
+  .sidebar-news {
+    padding-left: 1.3em; } }
+
+.widgettitle {
+  font-family: "Noto Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  padding-bottom: 1em;
+  border-bottom: 6px double #ddd; }
+
+.widget_recent_entries {
+  padding-bottom: 2em; }
+  .widget_recent_entries ul {
+    list-style: none;
+    padding-left: 0; }
+    .widget_recent_entries ul li {
+      border-bottom: 1px solid #ddd;
+      padding: 0.625em 0; }
+      .widget_recent_entries ul li:last-child {
+        border-bottom: none; }
+      .widget_recent_entries ul li a {
+        display: block; }
+      .widget_recent_entries ul li .post-date {
+        font-size: 0.75em; }
 
 /*============================================================================
 
@@ -1151,6 +1190,8 @@ footer {
   border-bottom: 1px solid #ddd;
   margin-bottom: 1em;
   padding-bottom: 1em; }
+  .news-entry:last-child {
+    border-bottom: none; }
   .news-entry p.type a {
     color: #000; }
 
