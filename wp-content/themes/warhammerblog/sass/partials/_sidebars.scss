@@ -3,6 +3,13 @@
     ## Sidebars
 
 ============================================================================*/
+
+@mixin nobullet-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+
 .sidebar-news {
     @include media($large-screen) {
         padding-left: 1.3em;
@@ -32,7 +39,7 @@
     font-size: em(18);
     padding: 1em 0;
     border-bottom: 6px double #eee;
-    border-top: $base-border;
+    //border-top: $base-border;
 }
 
 .widget {
@@ -41,8 +48,7 @@
 
 .widget_recent_entries {
     ul {
-        list-style: none;
-        padding-left: 0;
+        @include nobullet-list;
         li {
             border-bottom: $base-border;
             padding: em(10) 0;
@@ -60,5 +66,76 @@
 }
 
 .widget_archive {
+    ul {
+        @include nobullet-list;
+    }
+    select {
+        width: 100%;
+        margin-top: 1em;
+        padding: .4em;
+    }
+}
 
+.widget_calendar {
+    #calendar_wrap {
+        margin-top: 1em;
+    }
+    #wp-calendar {
+        width: 100%;
+    }
+    td {
+        text-align: center;
+        border: $base-border;
+    }
+    thead {
+        border: 2px solid #ddd;
+    }
+}
+
+.widget_categories {
+    ul {
+        @include nobullet-list;
+    }
+    select {
+        width: 100%;
+        margin-top: 1em;
+        padding: .4em;
+    }
+}
+
+.widget_pages, .widget_meta, .widget_rss, .widget_nav_menu {
+    ul {
+        @include nobullet-list;
+    }
+}
+
+.widget_rss {
+    li {
+        margin-bottom: 2em;
+    }
+}
+
+.widget_search {
+    .searchform {
+        margin-top: 1em;
+    }
+    .screen-reader-text {
+        display: block;
+    }
+    input[type=text] {
+        padding: em(10);
+    }
+    input[type=submit] {
+        padding: em(12);
+    }
+}
+
+.widget_text {
+    select {
+        max-width: 100%;
+        padding: em(10);
+    }
+    .textwidget {
+        margin-top: 1em;
+    }
 }
