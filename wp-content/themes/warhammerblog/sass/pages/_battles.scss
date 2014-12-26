@@ -5,14 +5,14 @@
 ============================================================================*/
 
 .battlereport-item {
-    border-top: 1px solid #ddd;
+    border-top: $base-border;
     padding: 1em;
     &:nth-child(odd) {
         background-color: #f8f8f8;
     }
 
     &:last-child {
-        border-bottom: 1px solid #ddd;
+        border-bottom: $base-border;
     }
     span {
         font-weight: 600;
@@ -39,6 +39,6 @@
 }
 
 .battlerep-full {
-    border-top: 1px solid #ddd;
+    border-top: $base-border;
     padding-top: 2em;
 }

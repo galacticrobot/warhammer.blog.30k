@@ -555,7 +555,7 @@ a {
     outline: none; }
 
 hr {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #eee;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -567,7 +567,7 @@ img, picture {
   height: auto !important; }
 
 blockquote {
-  border-left: 2px solid #DDD;
+  border-left: 2px solid #eee;
   color: #595959;
   margin: 1.5em 0;
   padding-left: 0.75em; }
@@ -746,7 +746,7 @@ html {
     padding-top: 0;
     border-top: none;
     min-height: 1000px;
-    border-left: 6px double #ddd; }
+    border-left: 1px solid #eee; }
     #secondary:last-child {
       margin-right: 0; } }
 .intro-text {
@@ -933,23 +933,25 @@ footer {
   font-family: "Noto Sans", sans-serif;
   text-transform: uppercase;
   font-size: 1.125em;
-  padding-bottom: 1em;
-  border-bottom: 6px double #ddd; }
+  padding: 1em 0;
+  border-bottom: 6px double #eee;
+  border-top: 1px solid #eee; }
 
-.widget_recent_entries {
-  padding-bottom: 2em; }
-  .widget_recent_entries ul {
-    list-style: none;
-    padding-left: 0; }
-    .widget_recent_entries ul li {
-      border-bottom: 1px solid #ddd;
-      padding: 0.625em 0; }
-      .widget_recent_entries ul li:last-child {
-        border-bottom: none; }
-      .widget_recent_entries ul li a {
-        display: block; }
-      .widget_recent_entries ul li .post-date {
-        font-size: 0.75em; }
+.widget {
+  margin-bottom: 4em; }
+
+.widget_recent_entries ul {
+  list-style: none;
+  padding-left: 0; }
+  .widget_recent_entries ul li {
+    border-bottom: 1px solid #eee;
+    padding: 0.625em 0; }
+    .widget_recent_entries ul li:last-child {
+      border-bottom: none; }
+    .widget_recent_entries ul li a {
+      display: block; }
+    .widget_recent_entries ul li .post-date {
+      font-size: 0.75em; }
 
 /*============================================================================
 
@@ -992,7 +994,7 @@ footer {
     clear: both; }
   @media screen and (max-width: 40em) {
     .accordion-tabs {
-      border: 1px solid #DDD;
+      border: 1px solid #eee;
       border-radius: 3px; } }
   @media screen and (min-width: 40em) {
     .accordion-tabs .tab-header-and-content {
@@ -1011,7 +1013,7 @@ footer {
     border-bottom: 1px solid #bbb;
     border-top: 1px solid #bbb;
     background-color: #ddd;
-    border-top: 1px solid #DDD;
+    border-top: 1px solid #eee;
     color: #333;
     display: block;
     font-weight: bold;
@@ -1031,18 +1033,18 @@ footer {
     .accordion-tabs .tab-link:focus {
       outline: none; }
     .accordion-tabs .tab-link.is-active {
-      background-color: #f7f7f7; }
+      background-color: white; }
       @media screen and (min-width: 40em) {
         .accordion-tabs .tab-link.is-active {
-          background-color: #f7f7f7;
-          border: 1px solid #DDD;
-          border-bottom-color: #f7f7f7;
+          background-color: white;
+          border: 1px solid #eee;
+          border-bottom-color: white;
           margin-bottom: -1px; } }
   .accordion-tabs .tab-content {
     -webkit-animation: fadeIn 0.85s ease;
     animation: fadeIn 0.85s ease;
     width: 100%;
-    background: #f7f7f7;
+    background: white;
     display: none;
     padding: 1.5em 1.618em; }
     .accordion-tabs .tab-content:after {
@@ -1054,7 +1056,7 @@ footer {
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
         border-top-right-radius: 3px;
-        border: 1px solid #DDD;
+        border: 1px solid #eee;
         float: left; } }
 
 .troop-entry-main {
@@ -1086,7 +1088,7 @@ footer {
   display: block; }
   @media screen and (min-width: 40em) {
     .troop-entry-title {
-      border-bottom: 1px solid #ddd; }
+      border-bottom: 1px solid #eee; }
       .troop-entry-title h2 {
         padding-bottom: 1em; } }
 
@@ -1134,7 +1136,7 @@ footer {
 
 .terrain-gallery-item {
   padding: .5em .5em .2em .5em;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   margin-bottom: 1.4em;
   float: left;
   display: block;
@@ -1153,12 +1155,12 @@ footer {
 
 ============================================================================*/
 .battlereport-item {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #eee;
   padding: 1em; }
   .battlereport-item:nth-child(odd) {
     background-color: #f8f8f8; }
   .battlereport-item:last-child {
-    border-bottom: 1px solid #ddd; }
+    border-bottom: 1px solid #eee; }
   .battlereport-item span {
     font-weight: 600; }
 
@@ -1178,7 +1180,7 @@ footer {
   margin-bottom: 1em; }
 
 .battlerep-full {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #eee;
   padding-top: 2em; }
 
 /*============================================================================
@@ -1187,7 +1189,7 @@ footer {
 
 ============================================================================*/
 .news-entry {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   margin-bottom: 1em;
   padding-bottom: 1em; }
   .news-entry:last-child {

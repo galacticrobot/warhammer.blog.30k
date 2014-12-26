@@ -141,7 +141,7 @@
     margin-bottom: $vertical-padding-small;
     display: block;
     @include media($medium-screen) {
-        border-bottom: 1px solid #ddd;
+        border-bottom: $base-border;
         h2 {
             padding-bottom: 1em;
         }

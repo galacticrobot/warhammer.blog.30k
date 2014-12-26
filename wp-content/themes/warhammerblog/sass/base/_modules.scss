@@ -51,8 +51,8 @@
         padding-top: 0;
         border-top: none;
         min-height: 1000px;
-        border-left: 6px double #ddd;
-
+        //border-left: 6px double #ddd;
+        border-left: $base-border;
     }
 }
 // --------------------------------------------------------------------------

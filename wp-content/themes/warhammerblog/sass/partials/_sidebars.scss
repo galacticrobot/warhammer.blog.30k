@@ -13,6 +13,16 @@
 //  Widgets
 // --------------------------------------------------------------------------
 
+
+//  Black Studio
+// ----------------------------------------------
+.widget_black_studio_tinymce {
+
+}
+
+//  Wordpress Standard
+// ----------------------------------------------
+
 .widgettitle {
     //background-color: transparentize($main-site-color, .5);
     //padding: .4em .5em;
@@ -20,17 +30,21 @@
     font-family: $base-font-family;
     text-transform: uppercase;
     font-size: em(18);
-    padding-bottom: 1em;
-    border-bottom: 6px double #ddd;
+    padding: 1em 0;
+    border-bottom: 6px double #eee;
+    border-top: $base-border;
+}
+
+.widget {
+    margin-bottom: 4em;
 }
 
 .widget_recent_entries {
-    padding-bottom: 2em;
     ul {
         list-style: none;
         padding-left: 0;
         li {
-            border-bottom: 1px solid #ddd;
+            border-bottom: $base-border;
             padding: em(10) 0;
             &:last-child {
                 border-bottom: none;
@@ -43,4 +57,8 @@
             }
         }
     }
+}
+
+.widget_archive {
+
 }
