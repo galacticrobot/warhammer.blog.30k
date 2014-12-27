@@ -17,7 +17,9 @@
                                         <a href="<?php the_permalink(); ?>" class="button">Read More</a>
                                     </p>
                                 </article>
-                            <?php endwhile; else: ?>
+                            <?php endwhile; ?>
+                                <?php wp_pagenavi()  ?>
+                            <?php else: ?>
                                 <h4>Sorry. There are no posts to display</h4>
                             <?php endif; ?>
 
