@@ -127,15 +127,16 @@ if( function_exists('acf_add_options_page') ) {
 
 function gaming_valkommen_dashboard_widgets() {
     global $wp_meta_boxes;
-        wp_add_dashboard_widget('custom_help_widget', 'Välkommen till ditt nya tema Mr. Sander', 'custom_dashboard_help');
+        wp_add_dashboard_widget('custom_help_widget', 'Välkommen till er nya site gentlemen!', 'custom_dashboard_help');
     }
     function custom_dashboard_help() {
     echo '<div>
-        <h4>Hallå Sampa!</h4>
+        <h4>Greetings</h4>
 
-        <p>Här är ditt nya tema. Hoppas du diggar det.<br>
-        Har du frågor är det bara att droppa mig ett mail.</p>
-        <p>Kärlek!<br>
+        <p>Här är er nya 30k site. Inget mästerverk kanske, men den funkar. Hoppas ni diggar den.<br>
+        Har ni frågor är det bara att droppa Pontus ett mail: <a href="mailto:info@30kgaming.com">info@30kgaming.com</a></p>
+
+        <p>Mvh<br>
         Sebastian
         </p>
         </div>';
