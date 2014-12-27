@@ -16,14 +16,15 @@ get_header(); ?>
 
                 <?php
                     $args = array(
-                        'post_type' => 'battles'
+                        'posts_per_page' => '3',
+                        'post_type' => 'battlereport',
+                        'paged' => $paged
                     );
-
-                    $the_query = new Wp_Query( $args )
-                 ?>
+                    $wp_query = new Wp_Query( $args )
+                ?>
 
                 <!-- ze loop -->
-                <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
                     <div class="battlereport-item">
                         <p class="battlereport-item-date"><?php the_time( 'F j, Y'); ?></p>
@@ -32,7 +33,7 @@ get_header(); ?>
                     </div>
 
                     <?php endwhile; ?>
-
+                        <?php wp_pagenavi()  ?>
                         <?php wp_reset_postdata(); ?>
 
                     <?php endif; // ends loop?>
