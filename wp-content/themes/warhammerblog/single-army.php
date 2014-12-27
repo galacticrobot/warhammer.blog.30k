@@ -242,22 +242,35 @@
                             </div><!-- tab-content -->
                         </li><!-- tab-header-and-content -->
 
-                        <li class="tab-header-and-content heavy-attack">
+                        <li class="tab-header-and-content heavy-support">
                             <a href="javascript:void(0)" class="tab-link">
                                 <img src="<?php bloginfo('template_directory'); ?>/img/symbols/ha_chart_symbol.png" alt="Troop choice" class="army-chart-symbol">
                             </a>
                             <div class="tab-content">
 
                                 <div class="troop-entry-title">
-                                    <h2>Elites</h2>
+                                    <h2>Heavy Support</h2>
                                 </div>
 
                                 <!-- display Heavy images-->
-                                <?php if( have_rows('elite_images') ): ?>
-                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_image'); ?>">
-                                        <?php the_sub_field('elite_tech_description'); ?>
-                                        <?php the_sub_field('elite_background_info'); ?>
+                                <?php if( have_rows('heavy_support_images') ): ?>
+                                    <?php while ( have_rows('heavy_support_images') ) : the_row(); ?>
+                                        <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('heavy_support_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('heavy_support_image'); ?>"></a>
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('heavy_support_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('heavy_support_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
 
                                     <?php else: ?>
@@ -267,10 +280,18 @@
                                 <?php endif ?>
 
                                 <!-- display Heavy misc Gallery -->
-                                <?php if( have_rows('elite_misc_gallery') ): ?>
-                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
-                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                <?php if( have_rows('heavy_support_misc_gallery') ): ?>
+                                    <?php while ( have_rows('heavy_support_misc_gallery') ) : the_row(); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('heavy_support_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('heavy_support_misc_gallery_image'); ?>"></a>
+                                            </div>
                                     <?php endwhile; ?>
                                 <?php endif ?>
 
@@ -284,15 +305,28 @@
                             <div class="tab-content">
 
                                 <div class="troop-entry-title">
-                                    <h2>Elites</h2>
+                                    <h2>Fortification</h2>
                                 </div>
 
                                 <!-- display fortification images-->
-                                <?php if( have_rows('elite_images') ): ?>
-                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_image'); ?>">
-                                        <?php the_sub_field('elite_tech_description'); ?>
-                                        <?php the_sub_field('elite_background_info'); ?>
+                                <?php if( have_rows('fortification_images') ): ?>
+                                    <?php while ( have_rows('fortification_images') ) : the_row(); ?>
+                                        <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('fortification_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('fortification_image'); ?>"></a>
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('fortification_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('fortification_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
 
                                     <?php else: ?>
@@ -302,10 +336,18 @@
                                 <?php endif ?>
 
                                 <!-- display fortification misc Gallery -->
-                                <?php if( have_rows('elite_misc_gallery') ): ?>
-                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
-                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                <?php if( have_rows('fortification_misc_gallery') ): ?>
+                                    <?php while ( have_rows('fortification_misc_gallery') ) : the_row(); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('fortification_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('fortification_misc_gallery_image'); ?>"></a>
+                                        </div>
                                     <?php endwhile; ?>
                                 <?php endif ?>
 
@@ -319,15 +361,28 @@
                             <div class="tab-content">
 
                                 <div class="troop-entry-title">
-                                    <h2>Elites</h2>
+                                    <h2>Lords of War</h2>
                                 </div>
 
                                 <!-- display lords images-->
-                                <?php if( have_rows('elite_images') ): ?>
-                                    <?php while ( have_rows('elite_images') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_image'); ?>">
-                                        <?php the_sub_field('elite_tech_description'); ?>
-                                        <?php the_sub_field('elite_background_info'); ?>
+                                <?php if( have_rows('lordsofwar_images') ): ?>
+                                    <?php while ( have_rows('lordsofwar_images') ) : the_row(); ?>
+                                        <article class="troop-entry-main">
+                                            <div class="image-container">
+                                                <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('lordsofwar_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('lordsofwar_image'); ?>"></a>
+                                            </div>
+                                            <div class="stats-container">
+                                               <div class="tech-stats"><?php the_sub_field('lordsofwar_tech_description'); ?></div>
+                                               <div class="background-stats"><?php the_sub_field('lordsofwar_background_info'); ?></div>
+                                            </div>
+                                        </article>
                                     <?php endwhile; ?>
 
                                     <?php else: ?>
@@ -337,10 +392,18 @@
                                 <?php endif ?>
 
                                 <!-- display lords misc Gallery -->
-                                <?php if( have_rows('elite_misc_gallery') ): ?>
-                                    <?php while ( have_rows('elite_misc_gallery') ) : the_row(); ?>
-                                        <img src="<?php the_sub_field('elite_misc_gallery_image'); ?>">
-                                        <?php the_sub_field('elite_misc_gallery_image_description'); ?>
+                                <?php if( have_rows('lordsofwar_misc_gallery') ): ?>
+                                    <?php while ( have_rows('lordsofwar_misc_gallery') ) : the_row(); ?>
+                                        <div class="misc-gallery-item">
+                                            <a href="<?php
+                                                //link to the full portfolio image
+                                                $image = the_sub_field('lordsofwar_misc_gallery_image');
+                                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                                if( $image ) {
+                                                    echo wp_get_attachment_image( $image, $size );
+                                                }
+                                                ?>"><img src="<?php the_sub_field('lordsofwar_misc_gallery_image'); ?>"></a>
+                                        </div>
                                     <?php endwhile; ?>
                                 <?php endif ?>
 
