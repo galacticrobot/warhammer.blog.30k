@@ -37,7 +37,7 @@ add_theme_support( 'post-thumbnails' );
 // ===============================================
 
 // Sidebars & Widgetizes Areas
-function undercoat_register_sidebars() {
+function gaming_register_sidebars() {
     register_sidebar(array(
         'id' => 'sidebar_news',
         'name' => __( 'Sidebar News', '30kgaming' ),
@@ -84,6 +84,271 @@ function undercoat_register_sidebars() {
     */
 } // don't remove this bracket!
 
-add_action( 'widgets_init', 'undercoat_register_sidebars' );
+add_action( 'widgets_init', 'gaming_register_sidebars' );
+
+//============================================================================
+//   ACF OPTIONS
+//============================================================================
+
+
+//  Add ACF options page
+// ===============================================
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => true //setting this to true jumps to footer directly
+    ));
+
+    // acf_add_options_sub_page(array(
+    //     'page_title'    => 'Theme Header Settings',
+    //     'menu_title'    => 'Header',
+    //     'parent_slug'   => 'theme-general-settings',
+    // ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+
+}
+
+//============================================================================
+//   DASHBOARD WIDGETS
+//============================================================================
+
+//  Custom Welcome Dashboard Widget 1
+// ===============================================
+
+function gaming_valkommen_dashboard_widgets() {
+    global $wp_meta_boxes;
+        wp_add_dashboard_widget('custom_help_widget', 'Välkommen till ditt nya tema Mr. Sander', 'custom_dashboard_help');
+    }
+    function custom_dashboard_help() {
+    echo '<div>
+        <h4>Hallå Sampa!</h4>
+
+        <p>Här är ditt nya tema. Hoppas du diggar det.<br>
+        Har du frågor är det bara att droppa mig ett mail.</p>
+        <p>Kärlek!<br>
+        Sebastian
+        </p>
+        </div>';
+}
+add_action('wp_dashboard_setup', 'gaming_valkommen_dashboard_widgets');
+
+//  Custom Welcome Dashboard Widget 2
+// ===============================================
+
+//add widget
+// function gaming_add_dashboard_widgets() {
+
+//     wp_add_dashboard_widget(
+//                  'example_dashboard_widget',         // Widget slug.
+//                  'Example Dashboard Widget',         // Title.
+//                  'gaming_dashboard_widget_function' // Display function.
+//         );
+// }
+// add_action( 'wp_dashboard_setup', 'gaming_add_dashboard_widgets' );
+
+// //output content of function
+// function gaming_dashboard_widget_function() {
+
+//     // Display whatever it is you want to show.
+//     echo "Hello World, I'm a great Dashboard Widget";
+// }
+
+//  Remove Dashboard Widgets that aren't used
+// ===============================================
+
+// Create the function to use in the action hook
+function gaming_remove_dashboard_meta() {
+        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+        //remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');//since 3.8
+}
+add_action( 'admin_init', 'gaming_remove_dashboard_meta' );
+
+//  Remove Welcome Panel
+// ===============================================
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
+
+//============================================================================
+//   Hide Plugins we dont want to show
+//============================================================================
+
+//acf
+function gaming_hide_plugin_acf() {
+
+    // provide a list of usernames who can edit custom field definitions here
+    $admins = array(
+        //'admin',
+        'thesherps'
+    );
+
+    // get the current user
+    $current_user = wp_get_current_user();
+
+    // match and remove if needed
+    if( !in_array( $current_user->user_login, $admins ) )
+    {
+
+          global $wp_list_table;
+          $hidearr = array('advanced-custom-fields-pro/acf.php');
+          $myplugins = $wp_list_table->items;
+          foreach ($myplugins as $key => $val) {
+            if (in_array($key,$hidearr)) {
+              unset($wp_list_table->items[$key]);
+            }
+          }
+
+    }
+}
+add_action('pre_current_active_plugins', 'gaming_hide_plugin_acf');
+
+//custom post types UI
+
+function gaming_hide_plugin_cptui() {
+
+    // provide a list of usernames who can edit custom field definitions here
+    $admins = array(
+        //'admin',
+        'thesherps'
+    );
+
+    // get the current user
+    $current_user = wp_get_current_user();
+
+    // match and remove if needed
+    if( !in_array( $current_user->user_login, $admins ) )
+    {
+          global $wp_list_table;
+          $hidearr = array('custom-post-type-ui/custom-post-type-ui.php');
+          $myplugins = $wp_list_table->items;
+          foreach ($myplugins as $key => $val) {
+            if (in_array($key,$hidearr)) {
+              unset($wp_list_table->items[$key]);
+            }
+          }
+    }
+}
+
+add_action('pre_current_active_plugins', 'gaming_hide_plugin_cptui');
+
+//============================================================================
+//   CUSTOMIZE ADMIN
+//============================================================================
+
+//  Hide ACF menu item from the admin menu
+// ===============================================
+
+function gaming_remove_acf_menu() {
+
+    // provide a list of usernames who can edit custom field definitions here
+    $admins = array(
+        'Pontus',
+        'thesherps'
+    );
+
+    // get the current user
+    $current_user = wp_get_current_user();
+
+    // match and remove if needed
+    if( !in_array( $current_user->user_login, $admins ) )
+    {
+        remove_menu_page('edit.php?post_type=acf-field-group');
+    }
+
+}
+
+add_action( 'admin_menu', 'gaming_remove_acf_menu', 999 );
+
+//  Hide other unused stuff from Admin menu, unless logged in as admin
+// ===============================================
+
+function gaming_remove_admin_menu_items() {
+
+    // provide a list of usernames who can edit custom field definitions here
+    $admins = array(
+        'Pontus',
+        'thesherps'
+    );
+
+        // get the current user
+    $current_user = wp_get_current_user();
+
+        // match and remove if needed
+    if( !in_array( $current_user->user_login, $admins ) )
+    {
+        remove_menu_page('cpt_main_menu'); //Custom Post Types UI
+        remove_menu_page('tools.php'); //Tools
+        remove_submenu_page( 'themes.php', 'theme-editor.php' ); //the css editor
+        remove_submenu_page( 'plugins.php', 'plugin-editor.php' ); //the plugins editor
+        remove_submenu_page( 'themes.php', 'customize.php' ); //the customize section
+    }
+}
+add_action( 'admin_menu', 'gaming_remove_admin_menu_items', 9999 );
+
+// --------------------------------------------------------------------------
+//  Remove Wordpress Logo from admin bar
+// --------------------------------------------------------------------------
+//removes it from this theme ONLY.
+
+function gaming_remove_wp_logo( $wp_admin_bar ) {
+$wp_admin_bar->remove_node('wp-logo');
+}
+add_action('admin_bar_menu', 'gaming_remove_wp_logo', 999);
+
+// --------------------------------------------------------------------------
+//  Add custom footer text in admin
+// --------------------------------------------------------------------------
+
+function gaming_custom_footer_text () {
+echo "Gooby pls";
+}
+add_filter('admin_footer_text', 'gaming_custom_footer_text');
+
+// --------------------------------------------------------------------------
+//  Change name of "posts" to "News"
+// --------------------------------------------------------------------------
+
+// in Menu
+function gaming_change_post_menu_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'News';
+    $submenu['edit.php'][5][0] = 'News';
+    $submenu['edit.php'][10][0] = 'Add News';
+}
+add_action( 'admin_menu', 'gaming_change_post_menu_label' );
+
+// In submenus
+function gaming_change_post_object_label() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'News';
+    $labels->singular_name = 'News';
+    $labels->add_new = 'Add News';
+    $labels->add_new_item = 'Add News Post';
+    $labels->edit_item = 'Edit News';
+    $labels->new_item = 'New Newsitem';
+    $labels->view_item = 'Show News';
+    $labels->search_items = 'Search News';
+    $labels->not_found = 'No News could be found';
+    $labels->not_found_in_trash = 'No News found in trash';
+}
+add_action( 'admin_menu', 'gaming_change_post_object_label' );
 
 ?>
