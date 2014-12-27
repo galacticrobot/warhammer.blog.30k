@@ -417,11 +417,8 @@
 
                 </ul><!-- accordion tabs -->
 
-            </div>
-        </section>
-
-
-
+                    </div>
+                </section>
 
             </div><!-- container -->
         </section><!-- content-block -->
