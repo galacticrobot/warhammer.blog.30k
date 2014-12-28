@@ -35,8 +35,9 @@
 .content-block {
     @include section;
     background-color: #fff;
-    &.army-listing-page {
-        background-color: #f8f8f8;
+    &.gray-background {
+        background-color: #f6f6f6;
+        //background-color: $clouds;
     }
 }
 
@@ -53,7 +54,7 @@
         @include span-columns(4);
         padding-top: 0;
         border-top: none;
-        min-height: 1000px;
+        min-height: 500px;
         //border-left: 6px double #ddd;
         border-left: $base-border;
     }

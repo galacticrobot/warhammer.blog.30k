@@ -30,13 +30,13 @@ $main-nav-bg-color: $main-site-color;
 // --------------------------------------------------------------------------
 
 .nav-trigger-container {
-    color: #fff;
     font-size: em(40);
     text-align: right;
         @include media($medium-screen) {
             display: none;
         }
     .nav-trigger {
+        color: #fff;
         padding: 0 em(5);
     }
 }

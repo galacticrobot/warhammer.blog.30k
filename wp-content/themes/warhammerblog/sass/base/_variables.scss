@@ -42,17 +42,30 @@ $base-z-index: 0;
 
 //  Main Colors
 // ----------------------------------------------
-$blue: #477DCA;
+$blue: #416dab;//#477DCA;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #eee; //#DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
-$dark-purple: #1f1722;
+
+//$black-purple: #1A1423;
+
+$black-purple: #1E1924;//#221E26;
+$dark-tone: #252326;
+$dark-purple: #1F0F33;
+$purple: #38244F;
+
+//flatui colors
+$midnight-blue: #2C3E50;
+$wet-asphalt: #34495E;
+$belize-hole: #2980B9;
+$peter-river: #3498DB;
+$clouds: #ECF0F1;
 
 //sets main color for everything
-$main-site-color: #1A1921; //#24242D; //1A1423
+$main-site-color: $dark-tone; //#24242D; //1A1423
 
 //  Background Color
 // ----------------------------------------------

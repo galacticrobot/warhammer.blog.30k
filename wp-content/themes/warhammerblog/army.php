@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-        <section class="content-block army-listing-boxes">
+        <section class="content-block gray-background">
             <div class="container box-listing single-comlumn-page">
 
                 <?php

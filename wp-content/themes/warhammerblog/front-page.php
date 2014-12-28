@@ -28,7 +28,7 @@ Please check back to this page once in a while. We’re still building out all t
             </div>
         </section>
 
-        <section class="content-block landing-news-section" style="background-color: #f8f8f8">
+        <section class="content-block landing-news-section gray-background">
             <div class="container single-comlumn-page">
 
                 <ul>
