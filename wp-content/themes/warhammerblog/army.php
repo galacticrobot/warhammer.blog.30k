@@ -23,7 +23,7 @@ get_header(); ?>
 
                     <div class="box">
                         <div class="box-image">
-                            <?php the_post_thumbnail(); ?>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                         </div>
                         <div class="box-content">
                             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

@@ -128,37 +128,6 @@
         }
     }
 }
-// --------------------------------------------------------------------------
-//  Army Listing boxes
-// --------------------------------------------------------------------------
-.army-listing-boxes {
-    @include section;
-    background-color: #F5f5f5;
-}
-.box-listing {
-    @include animation(fadeIn 0.85s ease);
-}
-.box {
-    @include clearfix;
-    background-color: white;
-    padding: 2em;
-    margin-bottom: 1em;
-    .box-image {
-        float: left;
-        // @include span-columns(6);
-        img {
-            max-width: 120px;
-        }
-    }
-    .box-content {
-        float: left;
-        margin-left: 2em;
-        // @include span-columns(6);
-        em {
-            font-family: $serif;
-        }
-    }
-}
 
 // --------------------------------------------------------------------------
 //  Animations

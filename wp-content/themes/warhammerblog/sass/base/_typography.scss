@@ -194,3 +194,22 @@ article {
       margin-bottom: .4em;
     }
 }
+
+// --------------------------------------------------------------------------
+//  tags
+// --------------------------------------------------------------------------
+
+.category-tag {
+    background: $base-accent-color;
+    color: white;
+    display: inline-block;
+    font-size: .7em;
+    font-weight: 800;
+    margin-bottom: 2em;
+    padding: 3px 8px;
+    text-transform: uppercase;
+
+    &.battlereport {
+        background: $site-green;
+    }
+}

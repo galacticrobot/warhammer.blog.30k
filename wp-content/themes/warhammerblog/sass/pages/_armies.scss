@@ -5,9 +5,48 @@
 ============================================================================*/
 
 // --------------------------------------------------------------------------
+//  Army Listing boxes
+// --------------------------------------------------------------------------
+
+.box-listing {
+    @include animation(fadeIn 0.85s ease);
+}
+.box {
+    @include clearfix;
+    background-color: white;
+    padding: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+        @include media($medium-screen) {
+            text-align: left;
+        }
+    .box-image {
+        @include media($medium-screen) {
+            float: left;
+            // @include span-columns(6);
+        }
+        img {
+            max-width: 120px;
+        }
+    }
+    .box-content {
+        @include media($medium-screen) {
+            float: left;
+            margin-left: 2em;
+            padding-top: 1.3em;
+            // @include span-columns(6);
+        }
+        em {
+            font-family: $serif;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
 //  Army listing Boxes
 // --------------------------------------------------------------------------
 .army-single-banner {
+    //the topbanner for all armypages
     background: url('../img/priests_wallpaper.jpg') no-repeat center center;
     background-size: cover;
     height: 300px;
@@ -69,7 +108,7 @@
             border-bottom: none;
             border-top: none;
         }
-        background-color: $tab-inactive-color;
+        background-color: #f8f8f8; //$tab-inactive-color;
         border-top: $tab-border;
         color: $dark-gray;
         display: block;
