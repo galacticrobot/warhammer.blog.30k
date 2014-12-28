@@ -49,20 +49,27 @@ $light-gray: #eee; //#DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
-$dark-purple: #1f1722;
 
-//sets main color for everything
-$main-site-color: #1A1921; //#24242D; //1A1423
+//$black-purple: #1A1423;
+// $black-purple: #1E1924;
+// $dark-purple: #1F0F33;
+// $purple: #38244F;
+
+$site-dark-gray: #252525; //#252326;
+$site-orange: #c45f1c;
+$site-green: #41ab64;
+$site-blue: #416DAB;
+
+//Main colors
+$main-site-color: $site-dark-gray;
+
+$base-font-color: $dark-gray;
+$base-accent-color: $site-blue;
 
 //  Background Color
 // ----------------------------------------------
-$base-background-color: $main-site-color; //161616 grey //161018
+$base-background-color: $main-site-color;
 $footer-text-color: lighten($base-background-color, 20%);
-
-//  Font Colors
-// ----------------------------------------------
-$base-font-color: $dark-gray;
-$base-accent-color: $blue;
 
 //  Link Colors
 // ----------------------------------------------

@@ -8,7 +8,7 @@
             </div>
         </section>
 
-        <section class="content-block army-listing-page">
+        <section class="content-block gray-background">
             <div class="container">
 
                 <ul class="accordion-tabs">
