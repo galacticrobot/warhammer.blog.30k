@@ -25,6 +25,22 @@ $main-nav-bg-color: $main-site-color;
     }
 }
 
+// --------------------------------------------------------------------------
+//  Main nav button . navtrigger
+// --------------------------------------------------------------------------
+
+.nav-trigger-container {
+    color: #fff;
+    font-size: em(40);
+    text-align: right;
+        @include media($medium-screen) {
+            display: none;
+        }
+    .nav-trigger {
+        padding: 0 em(5);
+    }
+}
+
 //  Menu styles
 // ----------------------------------------------
 .main-top-nav {
@@ -32,11 +48,17 @@ $main-nav-bg-color: $main-site-color;
     margin: 0;
     padding: 0;
     list-style: none;
+    display: none;
+        @include media($medium-screen) {
+            display: block;
+        }
     li {
         display: block;
+        border-bottom: 1px solid lighten($base-background-color, 5%);
         @include media($medium-screen) {
             float: left;
             display: inline-block;
+            border-bottom: none;
         }
     }
     a {

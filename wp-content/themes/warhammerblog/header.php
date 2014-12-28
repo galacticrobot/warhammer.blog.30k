@@ -25,6 +25,9 @@
         <section class="main-nav-container">
             <div class="container">
                 <nav>
+                    <div class="nav-trigger-container">
+                        <a href="#0" class="nav-trigger">&#9776;</a>
+                    </div>
                     <?php
 
                         //dynamic menu
