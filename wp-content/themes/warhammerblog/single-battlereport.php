@@ -8,9 +8,11 @@
                 <!-- ze loop -->
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-                    <div>
+                    <article>
                         <p class="type">Battlereport</p>
-                        <h2><?php the_title(); ?></h2>
+                    </article>
+                    <h2><?php the_title(); ?></h2>
+                    <article>
                         <p class="date"><?php the_time( 'F j, Y'); ?></p>
 
                         <div class="battlerep-meta">
@@ -29,7 +31,7 @@
                         <div class="battlerep-full">
                             <?php the_field('battlereport_full'); ?>
                         </div>
-                    </div>
+                    </article>
 
                 <?php endwhile; else: ?>
                     <h4>Sorry. There are no posts to display</h4>
