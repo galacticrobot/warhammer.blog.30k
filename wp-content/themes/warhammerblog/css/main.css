@@ -864,7 +864,7 @@ html {
 
 /*============================================================================
 
-    ## Main Navigation
+    ## Navigation
 
 ============================================================================*/
 .main-nav-container {
@@ -917,6 +917,10 @@ html {
         .main-top-nav a:hover {
           background-color: transparent;
           color: #767294; } }
+
+.wp-pagenavi {
+  border-top: 1px solid #ddd;
+  padding-top: 2em; }
 
 /*============================================================================
 

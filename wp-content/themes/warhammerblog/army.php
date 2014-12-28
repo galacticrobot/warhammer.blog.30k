@@ -31,9 +31,12 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <?php endwhile; wp_reset_postdata(); ?>
+                    <?php endwhile; ?>
+                        <?php wp_pagenavi()  ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php else: ?>
 
-                        <?php //wp_reset_postdata(); ?>
+                        <?php get_template_part( 'content', 'none' ); ?>
 
                     <?php endif; // ends loop?>
 
