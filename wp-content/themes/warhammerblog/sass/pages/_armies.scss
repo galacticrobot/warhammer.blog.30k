@@ -15,6 +15,7 @@
     @include clearfix;
     background-color: white;
     padding: 2em;
+    border: 1px solid #eee;
     margin-bottom: 1em;
     text-align: center;
         @include media($medium-screen) {
