@@ -1,18 +1,45 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package 30k Gaming
+ */
 
-        <section class="content-block">
-            <div class="container single-comlumn-page">
-                <!-- ze loop -->
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <article>
-                        <!-- <p class="type">Article Type</p> -->
-                        <h1><?php the_title(); ?></h1>
-                        <?php the_content() ?>
-                    </article>
-                <?php endwhile; else: ?>
-                    <h4>Sorry. Can't find anything to display</h4>
-                <?php endif; ?>
-            </div>
-        </section>
+get_header(); ?>
+
+    <section class="content-block">
+        <div class="container">
+
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+
+                    <?php while ( have_posts() ) : the_post(); ?>
+
+                        <?php get_template_part( 'content', 'page' ); ?>
+
+                        <?php
+                            // If comments are open or we have at least one comment, load up the comment template
+                            #if ( comments_open() || get_comments_number() ) :
+                               # comments_template();
+                            #endif;
+                        ?>
+
+                    <?php endwhile; // end of the loop. ?>
+
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+            <?php get_sidebar(); ?>
+
+        </div>
+    </section>
 
 <?php get_footer(); ?>
+
+
+

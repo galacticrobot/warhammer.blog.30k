@@ -16,7 +16,7 @@ get_header(); ?>
 
                 <?php
                     $args = array(
-                        'posts_per_page' => '3',
+                        'posts_per_page' => '10',
                         'post_type' => 'battlereport',
                         'paged' => $paged
                     );
