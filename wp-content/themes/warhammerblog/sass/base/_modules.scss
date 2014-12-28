@@ -158,3 +158,19 @@
         }
     }
 }
+
+// --------------------------------------------------------------------------
+//  Animations
+// --------------------------------------------------------------------------
+
+    .terrain-gallery {
+         @include animation(fadeIn 0.85s ease);
+    }
+
+    .news-entry {
+        @include animation(fadeIn 0.85s ease);
+    }
+
+    .battlereport-item {
+        @include animation(fadeIn 0.85s ease);
+    }
