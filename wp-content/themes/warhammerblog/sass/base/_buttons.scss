@@ -1,10 +1,12 @@
 $main-button-color: $main-site-color;
+//$main-site-color
+//$base-accent-color
 
 .button, button {
-    background-color: lighten($main-button-color, 20%);
+    background-color: lighten($main-button-color, 30%);
     border: none;
     outline: none;
-    font-size: em(12);
+    font-size: em(11);
     padding: em(12) em(20);
     // padding: 1.25rem 3rem 1.15rem;
     border-radius: 2rem;
