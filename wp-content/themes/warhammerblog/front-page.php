@@ -45,7 +45,7 @@ Please check back to this page once in a while. We’re still building out all t
                                 <h3 class="category-tag">Latest News</h3>
                                 <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
                                 <p><?php echo substr(strip_tags($post->post_content), 0, 200);?></p>
-                                <p><a href="<?php the_permalink() ?>" class="button <small></small>"> Read more <span>&#187;</span></a></p>
+                                <p><a href="<?php the_permalink() ?>" class="button small"> Read more <span>&#187;</span></a></p>
                             </div>
 
                         <?php endwhile;?>
@@ -76,7 +76,7 @@ Please check back to this page once in a while. We’re still building out all t
                                 <p class="battlereport-item-date"><?php the_time( 'F j, Y'); ?></p>
                                 <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                                 <div><strong><?php the_field('participant_one'); ?></strong> vs. <strong><?php the_field('participant_two'); ?></strong></div>
-                                <?php the_field('background_info'); ?>
+                                <div style="margin-top: .5em;"><?php the_field('background_info'); ?></div>
                             </div>
 
                         <?php endwhile; wp_reset_postdata(); ?>
